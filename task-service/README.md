@@ -247,7 +247,7 @@ curl http://localhost:8070/tasks?status=in_progress&priority=high
 
 ## Requirements
 
-- Node.js 14+
+- Node.js 22.01
 - npm or yarn
 
 ## License
