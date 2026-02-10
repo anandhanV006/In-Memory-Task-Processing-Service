@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Example API usage script
-# Make sure server is running on port 3000
+# Make sure server is running on port 8070
 
-BASE_URL="http://localhost:3000"
+BASE_URL="http://localhost:8070"
 
 echo "Task Service API Examples"
 echo "========================="
