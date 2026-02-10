@@ -24,7 +24,7 @@ npm start
 npm run dev
 ```
 
-Server will start on `http://localhost:3000`
+Server will start on `http://localhost:8070`
 
 ## API Endpoints
 
@@ -208,7 +208,7 @@ npm test -- --coverage
 
 ```bash
 # Create task
-curl -X POST http://localhost:3000/tasks \
+curl -X POST http://localhost:8070/tasks \
   -H "Content-Type: application/json" \
   -d '{
     "title": "Complete assignment",
@@ -218,7 +218,7 @@ curl -X POST http://localhost:3000/tasks \
 # Response will include task ID
 # Use that ID to update
 
-curl -X PUT http://localhost:3000/tasks/{TASK_ID} \
+curl -X PUT http://localhost:8070/tasks/{TASK_ID} \
   -H "Content-Type: application/json" \
   -d '{
     "status": "done"
@@ -229,13 +229,13 @@ curl -X PUT http://localhost:3000/tasks/{TASK_ID} \
 
 ```bash
 # Get all high priority tasks
-curl http://localhost:3000/tasks?priority=high
+curl http://localhost:8070/tasks?priority=high
 
 # Get all todos, sorted by newest first
-curl http://localhost:3000/tasks?status=todo&sortBy=createdAt&sortOrder=desc
+curl http://localhost:8070/tasks?status=todo&sortBy=createdAt&sortOrder=desc
 
 # Get in-progress tasks with high priority
-curl http://localhost:3000/tasks?status=in_progress&priority=high
+curl http://localhost:8070/tasks?status=in_progress&priority=high
 ```
 
 ## Notes
