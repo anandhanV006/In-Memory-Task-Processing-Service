@@ -1,0 +1,115 @@
+{
+  "info": {
+    "name": "Task Service API",
+    "description": "API collection for task management service"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/tasks",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Buy groceries\",\n  \"description\": \"Milk, eggs, bread\",\n  \"priority\": \"high\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Tasks",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/tasks"
+      }
+    },
+    {
+      "name": "Get Tasks - Filter Status",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/tasks?status=todo"
+      }
+    },
+    {
+      "name": "Get Tasks - Filter Priority",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/tasks?priority=high"
+      }
+    },
+    {
+      "name": "Get Tasks - Sort",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/tasks?sortBy=createdAt&sortOrder=desc"
+      }
+    },
+    {
+      "name": "Get Task by ID",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/tasks/{{task_id}}"
+      }
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "url": "{{base_url}}/tasks/{{task_id}}",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated title\",\n  \"status\": \"done\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete Task (Soft)",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base_url}}/tasks/{{task_id}}"
+      }
+    },
+    {
+      "name": "Delete Task (Hard)",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base_url}}/tasks/{{task_id}}?hard=true"
+      }
+    },
+    {
+      "name": "Get Statistics",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/tasks/stats"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "task_id",
+      "value": ""
+    }
+  ]
+}
